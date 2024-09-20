@@ -1,4 +1,1 @@
-export interface Result {
-  divs: DOMRect[];
-  styled: DOMRect[];
-}
+export type RecoilMockState = { [key: string]: unknown };
