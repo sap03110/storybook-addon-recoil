@@ -24,7 +24,6 @@
       "import": "./dist/preview.js",
       "require": "./dist/preview.cjs"
     },
-    "./manager": "./dist/manager.js",
     "./package.json": "./package.json"
   },
   "files": [
@@ -82,7 +81,7 @@
   },
   "bundler": {
     "exportEntries": [
-      "src/index.ts"
+      "src/index.tsx"
     ],
     "previewEntries": [
       "src/preview.ts"

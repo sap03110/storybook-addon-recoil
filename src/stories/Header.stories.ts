@@ -14,11 +14,19 @@ export default meta;
 type Story = StoryObj<typeof Header>;
 
 export const LoggedIn: Story = {
-  args: {
-    user: {
-      name: "Jane Doe",
+  parameters: {
+    recoil: {
+      user: {
+        name: "Jane Doe",
+      },
     },
   },
 };
 
-export const LoggedOut: Story = {};
+export const LoggedOut: Story = {
+  parameters: {
+    recoil: {
+      user: null,
+    },
+  },
+};
