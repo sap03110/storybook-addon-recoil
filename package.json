@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-recoil",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "addon to use Recoil in Storybook",
   "keywords": [
     "storybook-addons",
