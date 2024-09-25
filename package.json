@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-recoil",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "addon to use Recoil in Storybook",
   "keywords": [
     "storybook-addons",
@@ -44,14 +44,12 @@
     "build-storybook": "storybook build"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "0.0.0-pr-26654-sha-49d01553",
-    "@storybook/addon-interactions": "0.0.0-pr-26654-sha-49d01553",
-    "@storybook/addon-links": "0.0.0-pr-26654-sha-49d01553",
-    "@storybook/blocks": "0.0.0-pr-26654-sha-49d01553",
-    "@storybook/preview-api": "0.0.0-pr-26654-sha-49d01553",
-    "@storybook/react": "0.0.0-pr-26654-sha-49d01553",
-    "@storybook/react-vite": "0.0.0-pr-26654-sha-49d01553",
-    "@storybook/test": "0.0.0-pr-26654-sha-49d01553",
+    "@storybook/addon-essentials": "^8.3.3",
+    "@storybook/addon-interactions": "^8.3.3",
+    "@storybook/addon-links": "^8.3.3",
+    "@storybook/preview-api": "^8.3.3",
+    "@storybook/react": "^8.3.3",
+    "@storybook/react-vite": "^8.3.3",
     "@types/node": "^18.15.0",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
@@ -64,17 +62,18 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "recoil": "^0.7.7",
-    "storybook": "0.0.0-pr-26654-sha-49d01553",
+    "storybook": "^8.3.3",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4",
     "vite": "^5.3.5",
     "zx": "^7.2.3"
   },
   "peerDependencies": {
-    "storybook": "^8.3.0 || 0.0.0-pr-26654-sha-49d01553"
-  },
-  "overrides": {
-    "storybook": "0.0.0-pr-26654-sha-49d01553"
+    "@storybook/preview-api": "^7.0.0 || ^8.0.0",
+    "storybook": "^7.0.0 || ^8.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "recoil": "^0.6.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "publishConfig": {
     "access": "public"
