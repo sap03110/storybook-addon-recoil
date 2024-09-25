@@ -1,5 +1,7 @@
 # Storybook Addon Recoil
+
 addon to use Recoil in Storybook
+간편하게 스토리북에서 리코일을 사용할 수 있습니다.
 
 ### Development scripts
 
@@ -77,29 +79,20 @@ To get started, replace this README with the content in this sample template, mo
 
 ## Installation
 
-First, install the package.
-
 ```sh
-npm install --save-dev my-addon
+yarn add -D storybook-addon-recoil
+# or
+pnpm add -D storybook-addon-recoil
 ```
 
-Then, register it as an addon in `.storybook/main.js`.
+Then, register it as an addon in `.storybook/preview.ts`.
 
 ```js
-// .storybook/main.ts
+// .storybook/preview.ts
 
-// Replace your-framework with the framework you are using (e.g., react-webpack5, vue3-vite)
-import type { StorybookConfig } from '@storybook/your-framework';
+import { withRecoil } from 'storybook-addon-recoil';
 
-const config: StorybookConfig = {
-  // ...rest of config
-  addons: [
-    '@storybook/addon-essentials'
-    'my-addon', // 👈 register the addon here
-  ],
-};
-
-export default config;
+export const decorators = [..., withRecoil];
 ```
 
 ## Usage
@@ -118,10 +111,12 @@ import { Button } from './Button';
 const meta: Meta<typeof Button> = {
   component: Button,
   parameters: {
-    myAddon: {
-      exampleParameter: true,
-      // See API section below for available parameters
-    }
+    recoil: {
+      user: {
+        name: "Jane Doe",
+        age: 27,
+      },
+    },
   }
 };
 
@@ -153,14 +148,14 @@ registering the addon, like so:
 // .storybook/main.ts
 
 // Replace your-framework with the framework you are using (e.g., react-webpack5, vue3-vite)
-import type { StorybookConfig } from '@storybook/your-framework';
+import type { StorybookConfig } from "@storybook/your-framework";
 
 const config: StorybookConfig = {
   // ...rest of config
   addons: [
-    '@storybook/essentials',
+    "@storybook/essentials",
     {
-      name: 'my-addon',
+      name: "my-addon",
       options: {
         // 👈 options for my-addon go here
       },
@@ -176,7 +171,6 @@ export default config;
 Type: `boolean`
 
 Enable experimental behavior to...
-
 ````
 
 ## Release Management
