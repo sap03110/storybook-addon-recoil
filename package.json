@@ -15,9 +15,9 @@
   "author": "sap03110 <wastfg6972@naver.com>",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.mjs"
     },
     "./package.json": "./package.json"
   },
@@ -31,6 +31,7 @@
     "*.d.ts"
   ],
   "scripts": {
+    "prebuild": "pnpm clean",
     "build": "tsup",
     "build:watch": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
