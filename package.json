@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-recoil",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "addon to use Recoil in Storybook",
   "keywords": [
     "storybook-addons",
@@ -15,17 +15,15 @@
   "author": "sap03110 <wastfg6972@naver.com>",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./preview": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/preview.js",
-      "require": "./dist/preview.cjs"
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
     },
     "./package.json": "./package.json"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/**/*",
     "README.md",
@@ -69,22 +67,12 @@
     "zx": "^7.2.3"
   },
   "peerDependencies": {
-    "@storybook/preview-api": "^7.0.0 || ^8.0.0",
-    "storybook": "^7.0.0 || ^8.0.0",
+    "@storybook/preview-api": "^7.0.0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "recoil": "^0.6.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "bundler": {
-    "exportEntries": [
-      "src/index.tsx"
-    ],
-    "previewEntries": [
-      "src/preview.ts"
-    ]
   },
   "storybook": {
     "displayName": "Recoil",
