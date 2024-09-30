@@ -1,5 +1,5 @@
-import { makeDecorator } from "@storybook/preview-api";
-import React, { useEffect } from "react";
+import type { StoryContext, Decorator } from "@storybook/react";
+import React, { Fragment, useEffect } from "react";
 import { RecoilRoot, useRecoilCallback, type RecoilState } from "recoil";
 import { RecoilMockState } from "../types";
 
@@ -7,7 +7,7 @@ const Wrapper = ({
   newState,
   children,
 }: {
-  children: unknown;
+  children: any;
   newState: RecoilMockState;
 }) => {
   const updateState = useRecoilCallback(
@@ -32,17 +32,17 @@ const Wrapper = ({
 
   useEffect(updateState, [updateState]);
 
-  return <>{children}</>;
+  return <Fragment>{children}</Fragment>;
 };
 
-export const withRecoil = makeDecorator({
-  name: "withRecoil",
-  parameterName: "recoil",
-  skipIfNoParametersOrOptions: false,
-  wrapper: (getStory, context, { parameters }) => (
-    <RecoilRoot>
-      <Wrapper newState={parameters}>{getStory(context)}</Wrapper>
-    </RecoilRoot>
-  ),
-});
+export const withRecoil = (
+  Story: Parameters<Decorator>[0],
+  context: StoryContext,
+) => (
+  <RecoilRoot>
+    <Wrapper newState={context.parameters}>
+      <Story />
+    </Wrapper>
+  </RecoilRoot>
+);
 export default withRecoil;

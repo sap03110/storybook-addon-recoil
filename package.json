@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-recoil",
-  "version": "0.0.3",
+  "version": "0.0.4-beta",
   "description": "addon to use Recoil in Storybook",
   "keywords": [
     "storybook-addons",
@@ -45,7 +45,6 @@
     "@storybook/addon-essentials": "^8.3.3",
     "@storybook/addon-interactions": "^8.3.3",
     "@storybook/addon-links": "^8.3.3",
-    "@storybook/preview-api": "^8.3.3",
     "@storybook/react": "^8.3.3",
     "@storybook/react-vite": "^8.3.3",
     "@types/node": "^18.15.0",
@@ -67,7 +66,6 @@
     "zx": "^7.2.3"
   },
   "peerDependencies": {
-    "@storybook/preview-api": "^7.0.0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
