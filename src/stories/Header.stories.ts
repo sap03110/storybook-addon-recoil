@@ -30,3 +30,13 @@ export const LoggedOut: Story = {
     },
   },
 };
+
+export const DynamicLoggedInOut: Story = {
+  args: {
+    recoil: {
+      user: {
+        name: "Jane Doe",
+      },
+    },
+  },
+};
