@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./Button";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { userState } from "./stores/user";
 import "./header.css";
 
@@ -11,7 +11,7 @@ interface HeaderProps {
 }
 
 export const Header = ({ onLogin, onLogout, onCreateAccount }: HeaderProps) => {
-  const user = useRecoilValue(userState);
+  const [user, setUser] = useRecoilState(userState);
 
   return (
     <header>
@@ -46,7 +46,14 @@ export const Header = ({ onLogin, onLogout, onCreateAccount }: HeaderProps) => {
               <span className="welcome">
                 Welcome, <b>{user.name}</b>!
               </span>
-              <Button size="small" onClick={onLogout} label="Log out" />
+              <Button
+                size="small"
+                onClick={() => {
+                  setUser(null);
+                  onLogout();
+                }}
+                label="Log out"
+              />
             </>
           ) : (
             <>

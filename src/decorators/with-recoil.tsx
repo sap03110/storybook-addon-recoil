@@ -37,10 +37,10 @@ const Wrapper = ({
 
 export const withRecoil = (
   Story: Parameters<Decorator>[0],
-  { parameters, args }: StoryContext<{ recoil?: RecoilMockState }>,
+  { parameters }: StoryContext,
 ) => (
   <RecoilRoot>
-    <Wrapper newState={args.recoil || parameters.recoil}>
+    <Wrapper newState={parameters.recoil}>
       <Story />
     </Wrapper>
   </RecoilRoot>
